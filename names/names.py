@@ -42,11 +42,11 @@ class BinarySearchTree:
             return
         if self is not None:
             if self.left:
-                self.left.in_order_print(self)
-            if self.contains(node)
+                self.left.in_order_compare(self)
+            if self.contains(node):
                 print(self.value)
             if self.right:
-                self.right.in_order_print(self)
+                self.right.in_order_compare(self)
 
 start_time = time.time()
 
@@ -63,14 +63,16 @@ f.close()
 
 print(names_1, names_2)
 
-duplicates = BinarySearchTree('start3')
-for name_1 in names_1:
-    for name_2 in names_2:
-        if name_1 == name_2:
-            duplicates.append(name_1)
+names_1.for_each(names_2.in_order_compare(names_1))
+
+# duplicates = BinarySearchTree('start3')
+# for name_1 in names_1:
+#     for name_2 in names_2:
+#         if name_1 == name_2:
+#             duplicates.append(name_1)
 
 end_time = time.time()
-print (f"{len(duplicates)} duplicates:\n\n{', '.join(duplicates)}\n\n")
+# print (f"{len(duplicates)} duplicates:\n\n{', '.join(duplicates)}\n\n")
 print (f"runtime: {end_time - start_time} seconds")
 
 # ---------- Stretch Goal -----------
