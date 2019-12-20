@@ -10,9 +10,10 @@ class RingBuffer:
 
     def append(self, item):
         if self.storage.length >= self.capacity:
-            self.storage.tail = ListNode(item, None, None)
-        elif self.storage.length < self.capacity:
+            self.storage.remove_from_head()
             self.storage.add_to_head(item)
+        elif self.storage.length < self.capacity:
+            self.storage.add_to_tail(item)
 
 
 
