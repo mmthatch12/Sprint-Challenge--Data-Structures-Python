@@ -1,7 +1,7 @@
 import time
 
 class BinarySearchTree:
-    def __init__(self, value):
+    def __init__(self, value=None):
         self.value = value
         self.left = None
         self.right = None
@@ -31,24 +31,39 @@ class BinarySearchTree:
                 return self.right.contains(target)
 
     def for_each(self, cb):
-        # recursively
         cb(self.value)
         if self.left:
             self.left.for_each(cb)
         if self.right:
             self.right.for_each(cb)
 
+    def in_order_compare(self, node):
+        if self is None:
+            return
+        if self is not None:
+            if self.left:
+                self.left.in_order_print(self)
+            if self.contains(node)
+                print(self.value)
+            if self.right:
+                self.right.in_order_print(self)
+
 start_time = time.time()
 
+names_1 = BinarySearchTree('start')
+names_2 = BinarySearchTree('start1')
+
 f = open('names_1.txt', 'r')
-names_1 = f.read().split("\n")  # List containing 10000 names
+names_1.insert(f.read()) #f.read().split("\n")  # List containing 10000 names
 f.close()
 
 f = open('names_2.txt', 'r')
-names_2 = f.read().split("\n")  # List containing 10000 names
+names_2.insert(f.read())  #.split("\n")  # List containing 10000 names
 f.close()
 
-duplicates = []
+print(names_1, names_2)
+
+duplicates = BinarySearchTree('start3')
 for name_1 in names_1:
     for name_2 in names_2:
         if name_1 == name_2:
