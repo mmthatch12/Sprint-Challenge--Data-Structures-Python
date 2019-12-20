@@ -10,10 +10,16 @@ class RingBuffer:
 
     def append(self, item):
         if self.storage.length >= self.capacity:
-            self.storage.remove_from_head()
-            self.storage.add_to_head(item)
+            if self.current is self.storage.head:
+                self.storage.remove_from_head()
+                self.storage.add_to_head(item)
+                self.current = self.storage.head.next
+            
+
         elif self.storage.length < self.capacity:
             self.storage.add_to_tail(item)
+            self.current = self.storage.head
+            
 
 
 
