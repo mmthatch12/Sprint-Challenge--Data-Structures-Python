@@ -1,4 +1,5 @@
 from doubly_linked_list import DoublyLinkedList
+from doubly_linked_list import ListNode
 
 
 class RingBuffer:
@@ -9,9 +10,11 @@ class RingBuffer:
         self.size = 0
 
     def append(self, item):
-        if self.size >= capacity:
-            self.storage.tail = 
-        new_item = self.storage.add_to_head(item)
+        if self.size >= self.capacity:
+            self.storage.tail = ListNode(item, None, None)
+        elif self.size < self.capacity:
+            self.storage.add_to_head(item)
+            self.size += 1
 
 
     def get(self):
