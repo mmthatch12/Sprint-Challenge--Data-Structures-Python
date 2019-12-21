@@ -14,6 +14,10 @@ class RingBuffer:
                 self.storage.remove_from_head()
                 self.storage.add_to_head(item)
                 self.current = self.storage.head.next
+                # if current.next is not None:
+                    # curr = self.current
+                    # self.current = self.current.next
+
             
 
         elif self.storage.length < self.capacity:
