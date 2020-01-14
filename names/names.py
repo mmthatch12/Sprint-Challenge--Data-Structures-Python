@@ -53,7 +53,8 @@ f = open('names_2.txt', 'r')
 names_2.insert(f.read())  #.split("\n")  # List containing 10000 names
 f.close()
 
-duplicates = BinarySearchTree('st')
+# duplicates = BinarySearchTree('st')
+duplicates = set(names_1).intersection(names_2)
 
 names_1.contains(names_2.in_order_print(names_2))
 duplicates = []
